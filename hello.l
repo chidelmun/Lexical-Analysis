@@ -1,26 +1,25 @@
 /* 
- * Sample Scanner1: 
- * Description: Replace the string "username" from standard input 
- *              with the user's login name (e.g. lgao)
- * Usage: (1) $ flex sample1.lex
+ * Sample Scanner2: 
+ * Description: Count the number of characters and the number of lines 
+ *              from standard input
+ * Usage: (1) $ flex sample2.lex
  *        (2) $ gcc lex.yy.c -lfl
  *        (3) $ ./a.out
- *            stdin> username
+ *            stdin> whatever you like
  *	      stdin> Ctrl-D
- * Question: What is the purpose of '%{' and '%}'?
- *           What else could be included in this section?
+ * Questions: Is it ok if we do not indent the first line?
+ *            What will happen if we remove the second rule?
  */
 
-%{
-/* need this for the call to getlogin() below */
-#include <unistd.h>
-%}
+	int num_lines = 0, num_chars = 0;
 
 %%
-username	printf("%s\n", getlogin());
+\n	++num_lines; ++num_chars;
+.	++num_chars;
 %%
 
 main()
 {
   yylex();
+  printf("# of lines = %d, # of chars = %d\n", num_lines, num_chars);
 }
