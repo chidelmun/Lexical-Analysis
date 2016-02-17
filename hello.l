@@ -1,7 +1,7 @@
 %%
 "hello"		printf("Hello World\n");
 "user"		printf("Prints Username\n");
-2			printf("%d", 2);
+[0-9]		printf("Number");
 
 
 
