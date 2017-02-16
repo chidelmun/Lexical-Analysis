@@ -2,12 +2,16 @@
 	#include "scanner.h"
 %}
 %%
-:						return COLON;
-"db_type"				return TYPE;
-"db_name"				return NAME;
-"db_table_prefix"		return TABLE_PREFIX; 
-"db_port"				return PORT;
+"FROM"					return FROM;
+"SELECT"				return SELECT;
+"DELETE"				return DELETE;
+"INSERT"				return INSERT; 
+"CREATE"				return CREATE;
 ;						return SEMICOLON;
+"UPDATE"				return UPDATE;
+"WHERE"					return WHERE;
+"DROP"					return DROP;
+"INTO"					return INTO;
 
 [a-zA-Z][_a-zA-Z0-9]*	return IDENTIFIER;
 [1-9][0-9]*				return INTEGER;
