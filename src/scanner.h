@@ -5,3 +5,4 @@
 #define COLON 5
 #define IDENTIFIER 6
 #define INTEGER 7
+#define SEMICOLON 8
