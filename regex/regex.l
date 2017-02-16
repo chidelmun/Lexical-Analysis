@@ -1,3 +1,4 @@
 %%
-"SELECT\s.*FROM\s.*"		printf("SELECT WITH WHERE CLAUSE\n");
+"SELECT"		printf("SELECT WITH WHERE CLAUSE\n");
+.							{printf("NO SYNTAX MATCHED\n");exit(0);};
 %%
