@@ -1,20 +1,13 @@
-/*
-This is a sample scanner build using lex Language
-Author : Delveri Chick
-Date   : 2017
-*/
-
-
-
-
-/*Start of definitions*/
-
-
+%{
+x = 0;
+%}
 
 %%
-
-
-[a-zA-Z0-9_]*	printf("IDENTIFIER : %s\t %d", yytext, yyleng);
-
-
+[a]  {x++; printf("id %d",x); }
 %%
+
+int main(void)
+{
+    yylex();
+    return 0;
+}
